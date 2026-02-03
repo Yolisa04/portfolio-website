@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me – AI Assistant</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Back to portfolio button -->
+  <a href="portfolio.html" class="back-btn" aria-label="Back to portfolio">
+    ←
+    <span class="back-tooltip">back to portfolio</span>
+  </a>
+
+  <!-- Main content -->
+  <main class="container">
+    <h2>AI Assistant <span class="gradient-text">About Me</span></h2>
+
+    <div class="terminal-container">
+      <div class="bot-header">
+        <span class="bot-dot dot-pink"></span>
+        <span class="bot-dot dot-cyan"></span>
+        <span class="bot-dot dot-purple"></span>
+      </div>
+
+      <div class="bot-body">
+
+        <div id="chat-messages">
+          <div id="initial-message"></div>
+        </div>
+
+        <div class="quick-questions" id="quick-questions">
+          <div class="quick-questions-title">Quick questions:</div>
+          <button class="question-btn" data-question="skills">What are your skills?</button>
+          <button class="question-btn" data-question="projects">Tell me about your projects</button>
+          <button class="question-btn" data-question="education">What's your education?</button>
+          <button class="question-btn" data-question="contact">How can I contact you?</button>
+          <button class="question-btn" data-question="experience">What's your experience?</button>
+        </div>
+
+        <div class="input-area">
+          <textarea
+            id="chat-input"
+            placeholder="Ask anything about me..."
+            rows="2"
+          ></textarea>
+          <button id="send-btn" type="button">Send</button>
+        </div>
+
+        <div class="hint">
+          Press Enter to send, Shift+Enter for new line
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- AI logic -->
+  <script type="module" src="ai.js"></script>
+
+</body>
+</html>
