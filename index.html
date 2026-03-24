@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yolisa Hlohla | Network Automation Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,511 +15,678 @@
   <canvas id="bgCanvas"></canvas>
 </div>
 
+<!-- Noise overlay -->
+<div class="noise-overlay"></div>
+
 <nav>
-  <div class="container">
-    <div class="logo">YH</div>
+  <div class="container nav-inner">
+    <div class="logo">
+      <span class="logo-bracket">[</span>YH<span class="logo-bracket">]</span>
+    </div>
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="bot.html">About Me AI</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#home"><span class="nav-num">01.</span>Home</a></li>
+      <li><a href="#skills"><span class="nav-num">02.</span>Skills</a></li>
+      <li><a href="#projects"><span class="nav-num">03.</span>Projects</a></li>
+      <li><a href="#certificates"><span class="nav-num">04.</span>Certs</a></li>
+      <li><a href="bot.html" class="nav-ai">About Me AI ✦</a></li>
+      <li><a href="#contact"><span class="nav-num">05.</span>Contact</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobileNav">
+  <ul>
+    <li><a href="#home" onclick="closeMobileNav()"><span class="nav-num">01.</span> Home</a></li>
+    <li><a href="#skills" onclick="closeMobileNav()"><span class="nav-num">02.</span> Skills</a></li>
+    <li><a href="#projects" onclick="closeMobileNav()"><span class="nav-num">03.</span> Projects</a></li>
+    <li><a href="#certificates" onclick="closeMobileNav()"><span class="nav-num">04.</span> Certs</a></li>
+    <li><a href="bot.html"><span class="nav-num">✦</span> About Me AI</a></li>
+    <li><a href="#contact" onclick="closeMobileNav()"><span class="nav-num">05.</span> Contact</a></li>
+  </ul>
+</div>
+
+<!-- ══════════════ HERO ══════════════ -->
 <section class="hero" id="home">
-  <div class="container">
+  <div class="hero-eyebrow">
+    <span class="pulse-dot"></span>
+    Available for hire · South Africa · Remote/Relocation
+  </div>
+
+  <div class="hero-grid">
     <div class="hero-content">
-      <h1>
-        Hi, I'm <span class="gradient-text">Yolisa Hlohla</span>
+      <h1 class="hero-name">
+        <span class="name-line line-1">Yolisa</span>
+        <span class="name-line line-2">Hlohla</span>
       </h1>
-      <p><b>B.Eng Computer Engineering | Cape Peninsula University of Technology</b></p>
-      <p>
-        Engineer with strong foundations in programming, operating systems, and hardware/software integration. 
-        Passionate about Network Automation, SDN, and YANG modeling, with skills in DSP, cybersecurity, 
-        web development(frontend, backend & database) and DevOps.
+
+      <div class="hero-role">
+        <span class="role-prefix">//</span>
+        <span class="role-text" id="roleText"></span>
+        <span class="role-cursor">_</span>
+      </div>
+
+      <p class="hero-desc">
+        Computer Engineering graduate engineering the intersection of 
+        <em>network intelligence</em> and <em>software automation</em> - 
+        turning complex infrastructure into programmable, reliable systems.
       </p>
-      <div class="tags">
+
+      <div class="hero-metrics">
+        <div class="metric">
+          <span class="metric-val">80<span class="metric-unit">%</span></span>
+          <span class="metric-label">Config time reduced</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric">
+          <span class="metric-val">35<span class="metric-unit">%</span></span>
+          <span class="metric-label">Network utilization ↑</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric">
+          <span class="metric-val">1K<span class="metric-unit">+</span></span>
+          <span class="metric-label">Concurrent API req/s</span>
+        </div>
+      </div>
+
+      <div class="cta-buttons">
+        <a href="#projects" class="btn btn-primary">
+          <span>View Projects</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="CV.pdf" class="btn btn-secondary" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M4 6l4 4 4-4M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Download CV</span>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-terminal-wrap">
+      <div class="terminal-container">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="t-dot" style="background:#ff5f56"></span>
+            <span class="t-dot" style="background:#ffbd2e"></span>
+            <span class="t-dot" style="background:#27c93f"></span>
+          </div>
+          <span class="terminal-title">yolisa@network-lab:~</span>
+        </div>
+        <div class="terminal-body" id="terminal"></div>
+      </div>
+
+      <div class="tech-tags">
         <span class="tag">NETCONF/RESTCONF</span>
         <span class="tag">Python Automation</span>
         <span class="tag">OpenDaylight SDN</span>
-        <span class="tag">Linux/Unix Systems</span>
+        <span class="tag">Linux/Unix</span>
         <span class="tag">Cybersecurity</span>
-        <span class="tag">Web development</span>
-      </div>
-      
-      <div class="cta-buttons">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="certificates/CV.pdf" class="btn btn-secondary">Curriculum vitea</a>
-        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        <span class="tag">Full-Stack Dev</span>
       </div>
     </div>
-    
-    <div class="terminal-container">
-      <div class="terminal-header">
-        <div class="terminal-dot" style="background: #ff5f56;"></div>
-        <div class="terminal-dot" style="background: #ffbd2e;"></div>
-        <div class="terminal-dot" style="background: #27c93f;"></div>
-      </div>
-      <div class="terminal-body" id="terminal"></div>
-    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
   </div>
 </section>
 
+<!-- ══════════════ SKILLS ══════════════ -->
 <section id="skills">
   <div class="section-header">
-    <h2>Technical <span class="gradient-text">Expertise</span></h2>
-    <p>Specialized skills across network automation, software development, and infrastructure</p>
-  </div>
-  
-  <div class="skills-grid">
-    <div class="skill-card">
-      <div class="skill-icon">🌐</div>
-      <h3>Network & SDN</h3>
-      <ul class="skill-list">
-        <li>YANG Modeling (RFC 6020/7950)</li>
-        <li>NETCONF/RESTCONF Protocols</li>
-        <li>OpenDaylight Controller</li>
-        <li>Cisco IOS, VyOS, GNS3</li>
-        <li>OSPF, BGP, EIGRP, ISIS</li>
-      </ul>
-    </div>
-    
-    <div class="skill-card">
-      <div class="skill-icon">⚙️</div>
-      <h3>Automation & DevOps</h3>
-      <ul class="skill-list">
-        <li>Python (NetworkX, PuLP, Ncclient)</li>
-        <li>Bash Scripting</li>
-        <li>Docker Containerization</li>
-        <li>Git Version Control</li>
-        <li>Linux Administration</li>
-      </ul>
-    </div>
-    
-    <div class="skill-card">
-      <div class="skill-icon">💻</div>
-      <h3>Full-Stack Development??</h3>      
-      <ul class="skill-list">
-        <li>Django, Flask, Node.js</li>
-        <li>React.js Frontend</li>
-        <li>RESTful API Design</li>
-        <li>MongoDB, PostgreSQL, MySQL</li>
-        <li>JWT Authentication</li>
-      </ul>
-    </div>
-    
-    <div class="skill-card">
-      <div class="skill-icon">📊</div>
-      <h3>Monitoring & Analytics</h3>
-      <ul class="skill-list">
-        <li>Prometheus & Grafana</li>
-        <li>YANG Push Telemetry</li>
-        <li>Wireshark Analysis</li>
-        <li>SNMP Monitoring</li>
-        <li>Network Traffic Engineering</li>
-      </ul>
-    </div>
-    
-    <div class="skill-card">
-      <div class="skill-icon">🔧</div>
-      <h3>Embedded Systems</h3>
-      <ul class="skill-list">
-        <li>Arduino & Raspberry Pi</li>
-        <li>IoT (MQTT Protocol)</li>
-        <li>Embedded C/C++</li>
-        <li>Circuit Design</li>
-        <li>Energy Management Systems</li>
-      </ul>
-    </div>
-    
-    <div class="skill-card">
-      <div class="skill-icon">🔒</div>
-      <h3>Security & Testing</h3>
-      <ul class="skill-list">
-        <li>Penetration Testing</li>
-        <li>ACL Security Policies</li>
-        <li>PCI-DSS Compliance</li>
-        <li>Unit Testing (95% Coverage)</li>
-        <li>Vulnerability Assessment</li>
-      </ul>
-    </div>
+    <div class="section-label">02. Expertise</div>
+    <h2>Technical <span class="gradient-text">Arsenal</span></h2>
+    <p>Specialized across network automation, software development, and infrastructure</p>
   </div>
 
   <div class="skills-grid">
-    <div class="skill-card">
-      <div class="skill-icon">🌐</div>
-      <h3>Programming & Scripting</h3>
-      <ul class="skill-list">
-        <li>Python</li>
-        <li>Bash</li>
-        <li>C/C++</li>
-        <li>JavaScript</li>
-        <li>Java</li>
-        <li>SQL</li>
-        <li>HTML & CSS</li>
-      </ul>
+    <div class="skill-card" data-index="0">
+      <div class="skill-card-inner">
+        <div class="skill-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="4" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="4" cy="6" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="24" cy="6" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="4" cy="22" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="24" cy="22" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6 7.5l6 4.5M16 11.5l6-5M6 20.5l6-4.5M16 16.5l6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Network & SDN</h3>
+        <ul class="skill-list">
+          <li>YANG Modeling (RFC 6020/7950)</li>
+          <li>NETCONF/RESTCONF Protocols</li>
+          <li>OpenDaylight Controller</li>
+          <li>Cisco IOS, VyOS, GNS3</li>
+          <li>OSPF, BGP, EIGRP, ISIS</li>
+        </ul>
+      </div>
     </div>
 
-  <div class="stats">
-    <div class="stat-card">
-      <div class="stat-number">80%</div>
-      <div class="stat-label">Config Time Reduction</div>
+    <div class="skill-card" data-index="1">
+      <div class="skill-card-inner">
+        <div class="skill-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M6 8l4-4 4 4M10 4v12M18 20l4 4-4 4M22 24H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="14" y="6" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="4" y="17" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3>Automation & DevOps</h3>
+        <ul class="skill-list">
+          <li>Python (NetworkX, PuLP, Ncclient)</li>
+          <li>Bash Scripting</li>
+          <li>Docker Containerization</li>
+          <li>Git Version Control</li>
+          <li>Linux Administration</li>
+        </ul>
+      </div>
     </div>
-    <div class="stat-card">
-      <div class="stat-number">35%</div>
-      <div class="stat-label">Network Utilization Improvement</div>
+
+    <div class="skill-card" data-index="2">
+      <div class="skill-card-inner">
+        <div class="skill-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect x="3" y="5" width="22" height="15" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10 24h8M14 20v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M9 12l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Full-Stack Dev</h3>
+        <ul class="skill-list">
+          <li>Django, Flask, Node.js</li>
+          <li>React.js Frontend</li>
+          <li>RESTful API Design</li>
+          <li>MongoDB, PostgreSQL, MySQL</li>
+          <li>JWT Authentication & RBAC</li>
+        </ul>
+      </div>
     </div>
-    <div class="stat-card">
-      <div class="stat-number">99%</div>
-      <div class="stat-label">System Uptime</div>
+
+    <div class="skill-card" data-index="3">
+      <div class="skill-card-inner">
+        <div class="skill-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M4 20V12l10-8 10 8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="10" y="16" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M14 16v8" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3>Monitoring & Telemetry</h3>
+        <ul class="skill-list">
+          <li>Prometheus & Grafana</li>
+          <li>YANG Push Telemetry</li>
+          <li>Wireshark Analysis</li>
+          <li>SNMP Monitoring</li>
+          <li>Network Traffic Engineering</li>
+        </ul>
+      </div>
     </div>
-    <div class="stat-card">
-      <div class="stat-number">1000+</div>
-      <div class="stat-label">Concurrent API Requests</div>
+
+    <div class="skill-card" data-index="4">
+      <div class="skill-card-inner">
+        <div class="skill-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect x="5" y="8" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10 8V6a4 4 0 018 0v2M11 14h6M14 12v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Security & Testing</h3>
+        <ul class="skill-list">
+          <li>Penetration Testing</li>
+          <li>ACL Security Policies</li>
+          <li>PCI-DSS Compliance</li>
+          <li>Unit Testing (95% Coverage)</li>
+          <li>Vulnerability Assessment</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="skill-card" data-index="5">
+      <div class="skill-card-inner">
+        <div class="skill-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6 24c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M18 7l4-4M22 3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Embedded & IoT</h3>
+        <ul class="skill-list">
+          <li>Arduino & Raspberry Pi</li>
+          <li>MQTT Protocol</li>
+          <li>Embedded C/C++</li>
+          <li>Circuit Design</li>
+          <li>Energy Management Systems</li>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <div class="skills-grid">
-    <div class="skill-card">
-      <div class="skill-icon">📖</div>
-      <h3>Technical Foundation(CPUT)</h3>
-      <p>Key modules completed during my Computer Engineering degree</p>
-      <br>
-      <ul class="skill-list">
-          <h2>Year 1</h2> 
-          <li>Electrical Engineering Principles I</li>
-          <li>Computer Architecture I</li>
-          <li>Electronics I</li>
-          <li>Physics I</li>
-          <li>Engineering Mathematics I</li>
-          <li>Software Design I</li>
-    
-          <h2>Year 2</h2> 
-          <li>Engineering Ethic I</li>
-          <li>Engineering Communication I</li>
-          <li>Computer Graphics II</li>
-          <li>Signal Processing II</li>
-          <li>Digital Systems II</li>
-          <li>Operating System II</li>
-          <li>Engineering Mathematics II</li>
-          <li>Software Design II</li>
-
-          <h2>Year 3</h2>
-          <li>Database Systems III</li>
-          <li>Electronic Communications III</li>
-          <li>Embedded Systems III</li>
-          <li>Network Systems III</li>
-          <li>Industrial Computing Design III</li>
-        
-      </ul>
+  <!-- Stats band -->
+  <div class="stats-band">
+    <div class="stat-item">
+      <span class="stat-num" data-target="80">0</span><span class="stat-suf">%</span>
+      <span class="stat-desc">Config Time Reduced</span>
     </div>
+    <div class="stat-sep">—</div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="35">0</span><span class="stat-suf">%</span>
+      <span class="stat-desc">Network Utilization ↑</span>
+    </div>
+    <div class="stat-sep">—</div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="99">0</span><span class="stat-suf">%</span>
+      <span class="stat-desc">Lab System Uptime</span>
+    </div>
+    <div class="stat-sep">—</div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="95">0</span><span class="stat-suf">%</span>
+      <span class="stat-desc">API Test Coverage</span>
+    </div>
+  </div>
 
+  <!-- Languages row -->
+  <div class="lang-strip">
+    <div class="lang-strip-title">Languages</div>
+    <div class="lang-pills">
+      <span class="lang-pill">Python</span>
+      <span class="lang-pill">Bash</span>
+      <span class="lang-pill">C/C++</span>
+      <span class="lang-pill">JavaScript</span>
+      <span class="lang-pill">Java</span>
+      <span class="lang-pill">SQL</span>
+      <span class="lang-pill">HTML &amp; CSS</span>
+    </div>
+  </div>
 </section>
 
+<!-- ══════════════ PROJECTS ══════════════ -->
 <section id="projects">
   <div class="section-header">
+    <div class="section-label">03. Portfolio</div>
     <h2>Featured <span class="gradient-text">Projects</span></h2>
-    <p>Real-world applications demonstrating technical expertise and problem-solving</p>
+    <p>Real-world applications demonstrating depth in networking, automation, and full-stack development</p>
   </div>
-  
-  <div class="projects-grid">
-    <a class="project-link" href="www.github.com/Yolisa04"><!-- get a proper github account  -->
-    <div class="project-card">
-      <div class="project-header">
-        <h3>SDN Network Automation Platform</h3>
-        <div class="project-tech">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">YANG</span>
-          <span class="tech-tag">NETCONF/RESTCONF</span>
-          <span class="tech-tag">OpenDaylight</span>
-        </div>
-      </div>
-      <div class="project-body">
-        <ul>
-          <li>Architected automated network configuration framework using YANG data models (RFC 6020/7950) with OpenDaylight SDN controller</li>
-          <li>Reduced manual configuration time by 80% through Python automation scripts</li>
-          <li>Deployed XML/JSON payloads via NETCONF/RESTCONF to Cisco CSR1000v and Juniper vMX routers</li>
-          <li>Implemented transactional rollback mechanisms for zero-downtime updates</li>
-          <li>Validated protocol interoperability across multi-vendor virtualized testbed</li>
-        </ul>
-      </div>
-    </div></a>
 
-    <a class="project-link" href="www.github.com/Yolisa04"><!-- get a proper github account  -->
-    <div class="project-card">
-      <div class="project-header">
-        <h3>Network Traffic Engineering Optimization</h3>
-        <div class="project-tech">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">NetworkX</span>
-          <span class="tech-tag">PuLP</span>
-          <span class="tech-tag">Linear Programming</span>
-        </div>
-      </div>
-      <div class="project-body">
-        <ul>
-          <li>Designed Single/Multi-Commodity Flow (SCF/MCF) optimization models</li>
-          <li>Improved network link utilization by 35% through algorithmic optimization</li>
-          <li>Applied linear programming to minimize operational costs across distributed topologies</li>
-          <li>Generated automated visualizations and topology analysis for capacity planning</li>
-        </ul>
-      </div>
-    </div></a>
-    
-    <a class="project-link" href="www.github.com/Yolisa04"><!-- get a proper github account  -->
-    <div class="project-card">
-      <div class="project-header">
-        <h3>Secure Banking API Platform</h3>
-        <div class="project-tech">
-          <span class="tech-tag">Django</span>
-          <span class="tech-tag">MongoDB</span>
-          <span class="tech-tag">JWT</span>
-          <span class="tech-tag">RESTful API</span>
-        </div>
-      </div>
-      <div class="project-body">
-        <ul>
-          <li>Engineered RESTful banking API handling 1000+ concurrent requests</li>
-          <li>Implemented JWT-based authentication with encrypted transactions</li>
-          <li>Built role-based access control (RBAC) ensuring PCI-DSS compliance</li>
-          <li>Achieved 95% code coverage through automated unit testing</li>
-          <li>Designed modular backend architecture with data serialization</li>
-        </ul>
-      </div>
-    </div></a>
-    
-    <a class="project-link" href="www.github.com/Yolisa04"><!-- get a proper github account  -->
-    <div class="project-card">
-      <div class="project-header">
-        <h3>Enterprise Network Infrastructure Labs</h3>
-        <div class="project-tech">
-          <span class="tech-tag">GNS3</span>
-          <span class="tech-tag">Cisco IOS</span>
-          <span class="tech-tag">VyOS</span>
-          <span class="tech-tag">BGP/OSPF</span>
-        </div>
-      </div>
-      <div class="project-body">
-        <ul>
-          <li>Configured complex enterprise topologies with 20+ routers/switches</li>
-          <li>Implemented OSPF, EIGRP, BGP routing protocols</li>
-          <li>Designed VLAN segmentation and inter-VLAN routing</li>
-          <li>Established ACL security policies for network isolation</li>
-          <li>Optimized network performance through traffic analysis and convergence tuning</li>
-        </ul>
-      </div>
-    </div></a>
-   
-    <a class="project-link" href="www.github.com/Yolisa04"><!-- get a proper github account  -->
-    <div class="project-card">
-      <div class="project-header">
-        <h3>Solar-Powered Embedded System</h3>
-        <div class="project-tech">
-          <span class="tech-tag">Arduino</span>
-          <span class="tech-tag">Embedded C</span>
-          <span class="tech-tag">Energy Optimization</span>
-        </div>
-      </div>
-      <div class="project-body">
-        <ul>
-          <li>Designed off-grid solar-powered washing machine control system</li>
-          <li>Implemented energy optimization algorithms for efficient power management</li>
-          <li>Integrated solar panel, battery, and inverter management</li>
-          <li>Documented complete electrical schematics and sustainability impact</li>
-        </ul>
-      </div>
-    </div></a>
+  <div class="projects-list">
 
-    <a class="project-link" href="www.github.com/Yolisa04"><!-- get a proper github account  -->
-    <div class="project-card">
-      <div class="project-header">
-        <h3>Broadcasting & Audio Systems</h3>
-        <div class="project-tech">
-          <span class="tech-tag">Oscilloscope</span>
-          <span class="tech-tag">Soldering</span>
-          <span class="tech-tag">Breadboard</span>
-          <span class="tech-tag">Circuit monitoring</span>
+    <a class="project-card-link" href="https://github.com/Yolisa04" target="_blank" rel="noopener">
+      <article class="project-card featured">
+        <div class="project-num">01</div>
+        <div class="project-main">
+          <div class="project-top">
+            <h3>SDN Network Automation Platform</h3>
+            <div class="project-links">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3H3a1 1 0 00-1 1v11a1 1 0 001 1h11a1 1 0 001-1V9M11 1h6m0 0v6m0-6L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <p class="project-desc">End-to-end automated provisioning system across multi-vendor environments using YANG data models and OpenDaylight SDN controller - with real-time Prometheus/Grafana telemetry dashboards.</p>
+          <div class="project-impact">
+            <div class="impact-pill">↓ 80% manual config time</div>
+            <div class="impact-pill">Zero-downtime rollbacks</div>
+            <div class="impact-pill">Multi-vendor support</div>
+          </div>
+          <div class="project-tech-row">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">YANG</span>
+            <span class="tech-tag">NETCONF/RESTCONF</span>
+            <span class="tech-tag">OpenDaylight</span>
+            <span class="tech-tag">Prometheus</span>
+            <span class="tech-tag">Grafana</span>
+          </div>
         </div>
-      </div>
-      <div class="project-body">
-        <ul>
-          <li>Electronic Communications project analyzing audio system design and broadcasting principles using academic research</li>
-          <li>Built the Audio Systems by soldering the components on the transmitter PCB</li>
-          <li>Gather the frequency band for the transmitter using the oscilloscope</li>
-          <li>The audio is transmitter via the transmitter and recieved by the radio(FM/Cellphone)</li>
-          <li>FM Transmitter and reciever functionality and I focused of FM Transmitting</li>
-        </ul>
-      </div>
-    </div></a>
+      </article>
+    </a>
 
-    <a class="project-link" href=""><!-- get a proper image-->
-    <div class="project-card">
-      <div class="project-header">
-        <h3>Networking Labs (NSS370S)</h3>
-        <div class="project-tech">
-          <span class="tech-tag">Cisco Packet Tracer</span>
-          <span class="tech-tag">VyOS</span>
-          <span class="tech-tag">Routing Protocols</span>
-          <span class="tech-tag">Subnetting and IP addressing</span>
+    <a class="project-card-link" href="https://github.com/Yolisa04" target="_blank" rel="noopener">
+      <article class="project-card featured">
+        <div class="project-num">02</div>
+        <div class="project-main">
+          <div class="project-top">
+            <h3>Network Traffic Engineering Optimization</h3>
+            <div class="project-links">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3H3a1 1 0 00-1 1v11a1 1 0 001 1h11a1 1 0 001-1V9M11 1h6m0 0v6m0-6L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <p class="project-desc">SCF/MCF optimization models with linear programming to minimize congestion and infrastructure cost - with automated Python pipelines and visual topology reports for capacity planning.</p>
+          <div class="project-impact">
+            <div class="impact-pill">↑ 35% link utilization</div>
+            <div class="impact-pill">Cost reduction</div>
+            <div class="impact-pill">Automated reports</div>
+          </div>
+          <div class="project-tech-row">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">NetworkX</span>
+            <span class="tech-tag">PuLP</span>
+            <span class="tech-tag">Linear Programming</span>
+          </div>
         </div>
-      </div>
-      <div class="project-body">
-        <ul>
-          <li>Configured routers in Cisco Packet Tracer and VyOS, practiced troubleshooting, subnetting, and built network topologies from scratch</li>
-          <li>Used protocols like snmp to send emails via python complier</li>
-        </ul>
-      </div>
-    </div></a>
+      </article>
+    </a>
+
+    <a class="project-card-link" href="https://github.com/Yolisa04" target="_blank" rel="noopener">
+      <article class="project-card featured">
+        <div class="project-num">03</div>
+        <div class="project-main">
+          <div class="project-top">
+            <h3>Secure Banking API Platform</h3>
+            <div class="project-links">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3H3a1 1 0 00-1 1v11a1 1 0 001 1h11a1 1 0 001-1V9M11 1h6m0 0v6m0-6L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <p class="project-desc">Modular Django backend with JWT auth, RBAC, encryption, and financial-grade access controls - built to handle 1,000+ concurrent requests with 95% automated test coverage.</p>
+          <div class="project-impact">
+            <div class="impact-pill">1000+ concurrent users</div>
+            <div class="impact-pill">95% test coverage</div>
+            <div class="impact-pill">PCI-DSS compliant</div>
+          </div>
+          <div class="project-tech-row">
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">JWT</span>
+            <span class="tech-tag">RESTful API</span>
+            <span class="tech-tag">RBAC</span>
+          </div>
+        </div>
+      </article>
+    </a>
+
+    <div class="projects-secondary">
+      <a class="project-card-link" href="https://github.com/Yolisa04" target="_blank" rel="noopener">
+        <article class="project-card compact">
+          <div class="project-num">04</div>
+          <h3>Enterprise Network Infrastructure Labs</h3>
+          <p>20+ routers in GNS3 with OSPF, EIGRP, BGP, VLANs, ACLs, and performance tuning.</p>
+          <div class="project-tech-row">
+            <span class="tech-tag">GNS3</span>
+            <span class="tech-tag">Cisco IOS</span>
+            <span class="tech-tag">VyOS</span>
+            <span class="tech-tag">BGP/OSPF</span>
+          </div>
+        </article>
+      </a>
+
+      <a class="project-card-link" href="https://github.com/Yolisa04" target="_blank" rel="noopener">
+        <article class="project-card compact">
+          <div class="project-num">05</div>
+          <h3>Solar-Powered Embedded Control System</h3>
+          <p>Off-grid Arduino control system with firmware, power calculations, schematics, and energy optimization.</p>
+          <div class="project-tech-row">
+            <span class="tech-tag">Arduino</span>
+            <span class="tech-tag">Embedded C</span>
+            <span class="tech-tag">Energy Systems</span>
+          </div>
+        </article>
+      </a>
+
+      <a class="project-card-link" href="https://github.com/Yolisa04" target="_blank" rel="noopener">
+        <article class="project-card compact">
+          <div class="project-num">06</div>
+          <h3>FM Broadcasting & Audio Systems</h3>
+          <p>Soldered and calibrated FM transmitter PCB, measured frequency bands with oscilloscope, implemented signal chain.</p>
+          <div class="project-tech-row">
+            <span class="tech-tag">Oscilloscope</span>
+            <span class="tech-tag">PCB Soldering</span>
+            <span class="tech-tag">RF/FM</span>
+          </div>
+        </article>
+      </a>
+    </div>
   </div>
 </section>
 
+<!-- ══════════════ CERTIFICATES ══════════════ -->
 <section id="certificates">
-  <div id="section-header">
-    <h2>Current <span class="gradient-text">acquired certificates</span>.</h2>
-    <br>
+  <div class="section-header">
+    <div class="section-label">04. Credentials</div>
+    <h2>Certifications <span class="gradient-text">&amp; Training</span></h2>
   </div>
 
-  <div class="projects-grid">
-    <div class="project-card">
-      <div class="project-header">
-        <h3>Certificates Acquired</h3>
-        <div class="project-tech">
-          <span class="tech-tag">LinkedIn</span>
-          <span class="tech-tag">FNB Academy 2025</span>
-        </div>
-      </div>
-      <div class="project-body">
-         <h2>LinkedIn certificates</h2>
-    <ul>
-    <a class="certi-link" href="certificates/CertificateOfCompletion_Introduction to Linux.pdf"><li>Introduction to Linux</li></a>
-    <a class="certi-link" href="certificates/CertificateOfCompletion_Learning IP Addressing.pdf"><li>Learning IP Addressing</li></a>
-    <a class="certi-link" href="certificates/CertificateOfCompletion_Practical SoftwareDefined Networking 1 SDN and OpenFlow Quick Start.pdf"><li>Practical SoftwareDefined Networking 1 SDN and OpenFlow Quick Start</li></a>
-    <a class="certi-link" href="certificates/CertificateOfCompletion_Cisco Networking Foundations IP Addressing.pdf"> <li>Cisco Networking Foundations IP Addressing</li></a>
-  </ul>
-  <h2>FNB App Academy 2025</h2>
-  <ul>
-    <a class="certi-link" href="certificates/Yolisa-2-6874DCF0171A7-2025-07-14-12-33-20.pdf"><li>Full stack development</li></a>
-  </ul>
+  <div class="certs-grid">
+    <div class="cert-card cert-featured">
+      <div class="cert-org">FNB App Academy</div>
+      <div class="cert-name">Full-Stack Development</div>
+      <div class="cert-year">2025</div>
+      <a class="cert-link" href="certificates/Yolisa-2-6874DCF0171A7-2025-07-14-12-33-20.pdf" target="_blank">View Certificate →</a>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-org">LinkedIn Learning</div>
+      <div class="cert-name">Practical SDN &amp; OpenFlow</div>
+      <div class="cert-year">2024</div>
+      <a class="cert-link" href="certificates/CertificateOfCompletion_Practical SoftwareDefined Networking 1 SDN and OpenFlow Quick Start.pdf" target="_blank">View →</a>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-org">LinkedIn Learning</div>
+      <div class="cert-name">Cisco Networking Foundations: IP Addressing</div>
+      <div class="cert-year">2024</div>
+      <a class="cert-link" href="certificates/CertificateOfCompletion_Cisco Networking Foundations IP Addressing.pdf" target="_blank">View →</a>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-org">LinkedIn Learning</div>
+      <div class="cert-name">Introduction to Linux</div>
+      <div class="cert-year">2024</div>
+      <a class="cert-link" href="certificates/CertificateOfCompletion_Introduction to Linux.pdf" target="_blank">View →</a>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-org">LinkedIn Learning</div>
+      <div class="cert-name">Learning IP Addressing</div>
+      <div class="cert-year">2024</div>
+      <a class="cert-link" href="certificates/CertificateOfCompletion_Learning IP Addressing.pdf" target="_blank">View →</a>
+    </div>
+  </div>
+
+  <!-- Education block -->
+  <div class="edu-block">
+    <div class="edu-badge">B.Eng</div>
+    <div class="edu-content">
+      <div class="edu-degree">Bachelor of Engineering - Computer Engineering</div>
+      <div class="edu-school">Cape Peninsula University of Technology (CPUT)</div>
+      <div class="edu-year">Class of 2025</div>
+      <div class="edu-modules">
+        <span>Data Structures</span><span>Operating Systems</span><span>Computer Networks</span>
+        <span>Embedded Systems</span><span>Digital Systems</span><span>Signal Processing</span>
+        <span>Database Systems</span><span>Linear Programming</span><span>Electronic Communications</span>
       </div>
     </div>
+  </div>
 </section>
 
+<!-- ══════════════ CONTACT ══════════════ -->
 <section id="contact">
   <div class="section-header">
-    <h2>Get <span class="gradient-text">In Touch</span></h2>
-    <p>Let's discuss how I can contribute to your team</p>
+    <div class="section-label">05. Contact</div>
+    <h2>Let's <span class="gradient-text">Connect</span></h2>
+    <p>Open to roles in network automation, SDN, or full-stack - remote or relocation</p>
   </div>
 
-  <div class="contact-content">
-    <div class="contact-info">
-      <div class="contact-item">
-        <div class="contact-icon">📍</div>
-        <div>
-          <h3>Location</h3>
-          <p>Mthatha, South Africa</p>
-        </div>
-      </div>
+  <div class="contact-grid">
+    <div class="contact-left">
+      <p class="contact-intro">
+        I'm actively looking for opportunities where I can solve real infrastructure and software challenges. 
+        Whether you're hiring for a networking role, DevOps position, or full-stack project - let's talk.
+      </p>
 
-      <div class="contact-item">
-        <div class="contact-icon">✉️</div>
-        <div>
-          <h3>Email</h3>
-          <p>
-            <a class="contact-link" href="mailto:yolisahlohla@gmail.com">
-              yolisahlohla@gmail.com
-            </a>
-          </p>
-        </div>
-      </div>
+      <div class="contact-items">
+        <a class="contact-item" href="mailto:yolisahlohla@gmail.com">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14l-7 7L3 5zM3 5v10h14V5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-val">yolisahlohla@gmail.com</div>
+          </div>
+        </a>
 
-      <div class="contact-item">
-        <div class="contact-icon">🔗</div>
-        <div>
-          <h3>Connect</h3>
-          <p>
-            <a class="contact-link" href="https://www.linkedin.com/in/yolisa-hlohla-621585361">LinkedIn</a> |
-            <a class="contact-link" href="https://github.com/Yolisa04">GitHub</a>
-          </p>
-        </div>
-      </div>
+        <a class="contact-item" href="https://github.com/Yolisa04" target="_blank" rel="noopener">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C5.58 2 2 5.67 2 10.2c0 3.63 2.29 6.71 5.47 7.79.4.08.55-.18.55-.39v-1.37c-2.23.5-2.7-1.1-2.7-1.1-.36-.95-.89-1.2-.89-1.2-.73-.51.06-.5.06-.5.8.06 1.23.84 1.23.84.71 1.25 1.87.89 2.33.68.07-.53.28-.89.5-1.1-1.77-.2-3.63-.91-3.63-4.05 0-.9.31-1.63.82-2.2-.08-.21-.36-1.04.08-2.18 0 0 .67-.22 2.2.84a7.5 7.5 0 012-.28c.68 0 1.36.1 2 .28 1.53-1.06 2.2-.84 2.2-.84.44 1.14.16 1.97.08 2.18.51.57.82 1.3.82 2.2 0 3.15-1.87 3.84-3.65 4.04.29.25.54.76.54 1.54v2.28c0 .22.14.48.55.39C15.71 16.91 18 13.83 18 10.2 18 5.67 14.42 2 10 2z" fill="currentColor"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">GitHub</div>
+            <div class="contact-val">github.com/Yolisa04</div>
+          </div>
+        </a>
 
-      <div class="contact-item">
-        <div class="contact-icon">🎓</div>
-        <div>
-          <h3>Education</h3>
-          <p>
-            B.Eng Computer Engineering<br>
-            CPUT – Class of 2025
-          </p>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zM2 10h3M15 10h3M10 2v3M10 15v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-val">Mthatha, South Africa · Open to relocation</div>
+          </div>
         </div>
       </div>
     </div>
 
     <form class="contact-form" id="contactForm" novalidate>
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Your name"
-        required
-      >
-    </div>
-
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="your.email@example.com"
-        required
-      >
-    </div>
-
-    <div class="form-group">
-      <label for="message">Message</label>
-      <textarea
-        id="message"
-        name="message"
-        placeholder="Tell me about your opportunity..."
-        required
-      ></textarea>
-    </div>
-
-    <button
-      type="submit"
-      class="btn btn-primary"
-      id="send_btn"
-    >
-      Send Message
-    </button>
-  </form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell me about your opportunity..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" id="send_btn">
+        <span>Send Message</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l10 0M8 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </form>
   </div>
 </section>
 
 <footer>
-  <p>
-    &copy; 2026 Yolisa Hlohla.
-    Network Automation Engineer | SDN Specialist | Full-Stack Developer
-  </p>
+  <div class="footer-inner">
+    <div class="footer-logo"><span class="logo-bracket">[</span>YH<span class="logo-bracket">]</span></div>
+    <p>Yolisa Hlohla · Network Automation Engineer · SDN Specialist · Full-Stack Developer</p>
+    <p class="footer-copy">&copy; 2025 - Built with purpose.</p>
+  </div>
 </footer>
 
 <!-- EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  emailjs.init("jYy5AKnY0-YRr5QCY");
-</script>
-
-<script type="module" src="main.js"></script>
-<script type="module" src="ai.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="main.js"></script>
 <script src="contact.js"></script>
+<script>
+// Mobile nav
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => {
+  mobileNav.classList.toggle('open');
+  hamburger.classList.toggle('active');
+});
+function closeMobileNav() {
+  mobileNav.classList.remove('open');
+  hamburger.classList.remove('active');
+}
 
+// Role typewriter
+const roles = [
+  'Network Automation Engineer',
+  'SDN & YANG Modeling Specialist',
+  'Systems & Integration Engineer',
+  'Frondend & Backend Web Developer',
+  'Cybersecurity Enthusiast',
+  'DevOps Engineer',
+  'Computer Engineering Graduate'
+];
+
+let roleIndex = 0, charIndex = 0, isDeleting = false;
+const roleEl = document.getElementById('roleText');
+function typeRole() {
+  const current = roles[roleIndex];
+  if (!isDeleting) {
+    roleEl.textContent = current.substring(0, charIndex + 1);
+    charIndex++;
+    if (charIndex === current.length) {
+      isDeleting = true;
+      setTimeout(typeRole, 2000);
+      return;
+    }
+  } else {
+    roleEl.textContent = current.substring(0, charIndex - 1);
+    charIndex--;
+    if (charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
+  }
+  setTimeout(typeRole, isDeleting ? 40 : 70);
+}
+typeRole();
+
+// Count-up animation
+function animateCount(el) {
+  const target = parseInt(el.dataset.target);
+  const duration = 1800;
+  const start = performance.now();
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target);
+    if (progress < 1) requestAnimationFrame(update);
+    else el.textContent = target;
+  }
+  requestAnimationFrame(update);
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.stat-num').forEach(animateCount);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelector('.stats-band') && observer.observe(document.querySelector('.stats-band'));
+
+// Skill cards fade-in on scroll
+const cardObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.skill-card, .project-card, .cert-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  cardObserver.observe(el);
+});
+
+// Nav active state on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+  // Shrink nav on scroll
+  document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
 </body>
 </html>
-
-
